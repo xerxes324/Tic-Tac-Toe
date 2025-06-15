@@ -133,7 +133,8 @@ function controller(player1 = "PlayerOne", player2 = "PlayerTwo"){
     const wincheck = ()=>{
         const board = printround().tempboard.console_board; //accesing tempboard from within the modified_board object. can also use bracket notation instead of DOT. 
         console.log(board);
-        let flag = 0;
+        let flag = 0; 
+        let complete = 0;
         let winner = document.getElementById("winner");
 
         if ( board[0][0] === board[1][1] && board[1][1] == board[2][2] && board[0][0] !== "empty" || //main diagonal
@@ -147,6 +148,7 @@ function controller(player1 = "PlayerOne", player2 = "PlayerTwo"){
         {
             console.log(activeplayer);
             winner.innerHTML = `Winner is : ${activeplayer.playername}`;
+            complete = 1;
             disablebuttons();
 
         }
@@ -158,7 +160,7 @@ function controller(player1 = "PlayerOne", player2 = "PlayerTwo"){
                 }
             }
         }
-        if ( flag === 0){
+        if ( flag === 0 && complete !== 1){
             winner.innerHTML = "The match has ended in a draw."
         }
     }
