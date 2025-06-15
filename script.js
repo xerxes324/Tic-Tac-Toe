@@ -20,13 +20,21 @@ function setupDOM(){
     }
 
     const reset = document.getElementById("reset");
+    reset.dataset.id = "reset-id";
     reset.addEventListener("click",()=>{
         const board = document.querySelector(".board");
         board.innerHTML = ""
         setupDOM();
     })
 }
-
+function disablebuttons(){
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(e => {
+        if ( e.dataset.id !== "reset-id" ){
+            e.disabled = true;
+        } 
+    });
+}
 
 function gameboard(){
     
@@ -139,6 +147,7 @@ function controller(player1 = "PlayerOne", player2 = "PlayerTwo"){
         {
             console.log(activeplayer);
             winner.innerHTML = `Winner is : ${activeplayer.playername}`;
+            disablebuttons();
 
         }
         for ( let i = 0; i < 3; i++ ){
