@@ -1,0 +1,46 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+
+body,html{
+    display: flex;
+    background-color: black;
+    color: white;
+}
+.heading
+{
+    text-align: center;
+
+}
+
+.container
+{
+    justify-self: center;
+}
+
+.board
+{
+    background-color: pink;
+    display:grid;
+    grid-template-columns: repeat(3,11rem);
+    grid-template-rows: repeat(3,10rem);
+    border: 5px solid black;
+    height: 30rem;
+    width: 33rem;
+}
+
+.cell
+{
+    border: 3px solid white;
+    background-color: orange;
+    font-size: 2rem;
+    color: blue;
+    font-weight: 600;
+}
+
+#reset{
+    margin: 5rem;
+    width: 25rem;
+}
