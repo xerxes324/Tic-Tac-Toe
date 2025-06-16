@@ -1,7 +1,6 @@
 function setupDOM(player1 = "PlayerOne", player2 = "PlayerTwo") {
     tictac = controller(player1, player2);
     tictac.xoboard.turncheck(tictac.getactiveplayer().playername);
-    
     const domboard = document.querySelector(".board");
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
@@ -58,7 +57,6 @@ function gameboard() {
             board[i].push(createCell());
         }
     }
-
     const getboard = () => board;
 
     const printboard = () => {
@@ -119,8 +117,6 @@ function controller(player1 = "PlayerOne", player2 = "PlayerTwo") {
     };
 
     const playround = (activeplayer, rowid, colid, button) => {
-        console.log(activeplayer);
-        console.log("works");
 
         xoboard.droptoken(activeplayer, rowid, colid, button);
         printround();
@@ -132,8 +128,6 @@ function controller(player1 = "PlayerOne", player2 = "PlayerTwo") {
 
     const wincheck = () => {
         const board = printround().tempboard.console_board;
-        console.log(board);
-
         let flag = 0;
         let complete = 0;
         let winner = document.getElementById("winner");
@@ -148,7 +142,6 @@ function controller(player1 = "PlayerOne", player2 = "PlayerTwo") {
             board[0][1] === board[1][1] && board[1][1] === board[2][1] && board[0][1] !== "empty" ||
             board[0][2] === board[1][2] && board[1][2] === board[2][2] && board[0][2] !== "empty"
         ) {
-            console.log(activeplayer);
             winner.innerHTML = `Winner is : ${activeplayer.playername}`;
             complete = 1;
             disablebuttons();
