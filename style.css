@@ -1,77 +1,93 @@
-*
-{
-    margin:0;
-    padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body,html{
-    display: flex;
-    background-color: black;
-    color: white;
-    justify-content: center;
-    align-items: center;
+@font-face {
+  font-family: customFont1;
+  src: url("Fonts/customFont.otf");
 }
 
-.heading
-{
-    text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-
+body,
+html {
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: customFont1;
 }
 
-.container
-{
-    justify-self: center;
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
-.board
-{
-    display:grid;
-    grid-template-columns: repeat(3,11rem);
-    grid-template-rows: repeat(3,10rem);
-    height: 30rem;
-    width: 33rem;
+.container {
+  justify-self: center;
 }
 
-.cell
-{
-    border: 3px solid white;
-    background-color: orange;
-    font-size: 2rem;
-    color: blue;
-    font-weight: 600;
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 11rem);
+  grid-template-rows: repeat(3, 10rem);
+  height: 30rem;
+  width: 33rem;
 }
 
-#reset{
-    margin: 2rem;
-    width: 29rem;
-    font-size: 2rem;
+.cell {
+  border: 3px solid white;
+  background-color: orange;
+  font-size: 2rem;
+  color: blue;
+  font-weight: 600;
+  border-radius: 8px;
 }
 
-#turn, #winner
-{
-    text-align: center;
-    color: red;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
+.cell:hover{
+  background-color: rgb(192, 127, 6);
+  cursor: pointer;
 }
 
-.form
-{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-left: 2rem;
+#reset {
+  margin: 2rem;
+  width: 29rem;
+  font-size: 2rem;
 }
 
-#playerone, #playertwo
-{
-    height: 2rem;
+#reset:hover{
+  background-color: red;
 }
 
-#submitbutton
-{
-    margin-top: 3rem;
-    font-size: 1.5rem;
+#turn,#winner {
+  text-align: center;
+  color: red;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 2rem;
+}
+
+#playerone,
+#playertwo {
+  height: 2rem;
+}
+
+#playerone:hover, #playertwo:hover{
+  background-color: rgb(184, 181, 181);
+}
+
+#submitbutton {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+#submitbutton:hover{
+  background-color: greenyellow;
 }
